@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lal Ji Traders Admin Panel</title>
+  <meta name="description" content="Admin panel for Lal Ji Traders to manage products, rates, orders, and inquiries.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-body">
+  <section class="admin-login-screen" id="adminLoginScreen">
+    <div class="admin-login-card">
+      <div class="brand admin-login-brand">
+        <img class="brand-logo" src="logo.svg" alt="Lal Ji Traders logo">
+        <span class="brand-copy">
+          <strong>Lal Ji Traders</strong>
+          <small>Secure Admin Access</small>
+        </span>
+      </div>
+      <div class="section-heading">
+        <p class="eyebrow">Admin Login</p>
+        <h2>Sign in with your admin ID and password.</h2>
+      </div>
+      <form class="contact-form" id="adminLoginForm">
+        <label>
+          Admin ID
+          <input type="text" name="adminId" placeholder="Enter admin ID" required>
+        </label>
+        <label>
+          Password
+          <input type="password" name="adminPassword" placeholder="Enter password" required>
+        </label>
+        <button class="btn btn-primary" type="submit">Login</button>
+        <p class="tiny-note" id="adminLoginMessage">Only authorized team members can access the admin dashboard.</p>
+      </form>
+    </div>
+  </section>
+
+  <div class="site-shell" id="adminApp" hidden>
+    <header class="hero admin-hero">
+      <nav class="nav">
+        <a class="brand" href="index.html">
+          <img class="brand-logo" src="logo.svg" alt="Lal Ji Traders logo">
+          <span class="brand-copy">
+            <strong>Lal Ji Traders</strong>
+            <small>Admin Panel</small>
+          </span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Storefront</a>
+          <a href="#productsAdmin">Products</a>
+          <a href="#ratesAdmin">Rates</a>
+          <a href="#ordersAdmin">Orders</a>
+          <a href="#inquiriesAdmin">Inquiries</a>
+          <button class="text-button" type="button" id="logoutButton">Logout</button>
+        </div>
+      </nav>
+
+      <section class="hero-content admin-intro">
+        <div class="hero-copy">
+          <p class="eyebrow">Dashboard</p>
+          <h1>Manage products, prices, orders, and customer messages.</h1>
+          <p class="lead">
+            This admin panel uses the backend database, so changes appear on the storefront immediately.
+          </p>
+        </div>
+
+        <div class="hero-card admin-stats" id="adminStats"></div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section" id="productsAdmin">
+        <div class="section-heading">
+          <p class="eyebrow">Products Admin</p>
+          <h2>Add new products or edit existing items.</h2>
+        </div>
+
+        <div class="admin-grid">
+          <form class="checkout-card admin-form-card" id="productForm">
+            <div class="checkout-head">
+              <h3 id="productFormTitle">Add Product</h3>
+              <p>Manage product category, price, unit, and description.</p>
+            </div>
+            <input type="hidden" name="productId">
+            <div class="form-grid">
+              <label>
+                Product Name
+                <input type="text" name="name" required>
+              </label>
+              <label>
+                Category
+                <input type="text" name="category" required>
+              </label>
+              <label>
+                Price
+                <input type="number" name="price" min="1" required>
+              </label>
+              <label>
+                Unit
+                <input type="text" name="unit" placeholder="bag, ton, piece" required>
+              </label>
+              <label class="full-width">
+                Description
+                <textarea name="description" rows="4" required></textarea>
+              </label>
+            </div>
+            <div class="checkout-actions">
+              <button class="btn btn-primary" type="submit">Save Product</button>
+              <button class="btn btn-secondary" type="button" id="cancelProductEdit" hidden>Cancel Edit</button>
+            </div>
+          </form>
+
+          <div class="admin-list-card">
+            <div class="checkout-head">
+              <h3>Current Products</h3>
+              <p>These products are shown on the storefront.</p>
+            </div>
+            <div class="admin-list" id="adminProductList"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="ratesAdmin">
+        <div class="section-heading">
+          <p class="eyebrow">Rates Admin</p>
+          <h2>Update today's market rates.</h2>
+        </div>
+
+        <div class="admin-grid">
+          <form class="checkout-card admin-form-card" id="ratesForm">
+            <div class="checkout-head">
+              <h3>Rate Board</h3>
+              <p>Change the update date and edit the displayed market reference items.</p>
+            </div>
+            <label>
+              Updated On
+              <input type="text" name="updatedOn" placeholder="April 26, 2026" required>
+            </label>
+            <div class="admin-rate-list" id="adminRateFields"></div>
+            <button class="btn btn-secondary" type="button" id="addRateFieldButton">Add Rate Item</button>
+            <div class="checkout-actions">
+              <button class="btn btn-primary" type="submit">Save Rates</button>
+            </div>
+          </form>
+
+          <div class="admin-list-card">
+            <div class="checkout-head">
+              <h3>Rate Preview</h3>
+              <p>This mirrors the cards shown on the website.</p>
+            </div>
+            <div class="rates-grid" id="adminRatesPreview"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="ordersAdmin">
+        <div class="section-heading with-inline-action">
+          <div>
+            <p class="eyebrow">Orders</p>
+            <h2>Review submitted order requests.</h2>
+          </div>
+          <button class="btn btn-secondary" type="button" id="clearOrdersButton">Clear Orders</button>
+        </div>
+        <div class="admin-records" id="ordersList"></div>
+      </section>
+
+      <section class="section" id="inquiriesAdmin">
+        <div class="section-heading with-inline-action">
+          <div>
+            <p class="eyebrow">Inquiries</p>
+            <h2>See messages sent through the contact form.</h2>
+          </div>
+          <button class="btn btn-secondary" type="button" id="clearInquiriesButton">Clear Inquiries</button>
+        </div>
+        <div class="admin-records" id="inquiriesList"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

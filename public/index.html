@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lal Ji Traders | Building Materials in Haidergarh, Barabanki</title>
+  <meta
+    name="description"
+    content="Lal Ji Traders is a trusted building materials business in Haidergarh, Barabanki, founded by Savitri Singh and family with the blessings of Baba Lal Dayal Ji."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="hero" id="home">
+      <nav class="nav">
+        <a class="brand" href="#home">
+          <img class="brand-logo" src="logo.svg" alt="Lal Ji Traders logo">
+          <span class="brand-copy">
+            <strong>Lal Ji Traders</strong>
+            <small>Building Materials and Home Supply</small>
+          </span>
+        </a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#products">Products</a>
+          <a href="#rates">Rates</a>
+          <a href="#estimator">Estimator</a>
+          <a href="#order">Order</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <section class="hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">Haidergarh, Barabanki</p>
+          <h1>Strong materials for strong homes, shops, and projects.</h1>
+          <p class="lead">
+            Lal Ji Traders was founded by Savitri Singh and family by the blessings of Baba Lal Dayal Ji,
+            serving builders, contractors, and families with reliable construction materials and honest service.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#products">Explore Products</a>
+            <a class="btn btn-secondary" href="#order">Place an Order</a>
+          </div>
+          <ul class="hero-points">
+            <li>Quality building materials</li>
+            <li>Bulk and retail supply</li>
+            <li>Order by form, phone, or WhatsApp</li>
+          </ul>
+        </div>
+
+        <div class="hero-card">
+          <p class="card-title">Why Customers Choose Us</p>
+          <div class="stat-grid">
+            <article>
+              <strong>Trusted</strong>
+              <span>Local supplier for homes and commercial work</span>
+            </article>
+            <article>
+              <strong>Fast Support</strong>
+              <span>Quick response for material inquiries and orders</span>
+            </article>
+            <article>
+              <strong>Flexible Payments</strong>
+              <span>UPI, bank transfer, cash, and gateway-ready checkout</span>
+            </article>
+            <article>
+              <strong>Wide Range</strong>
+              <span>Cement, steel, bricks, sand, pipes, paint, and more</span>
+            </article>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section trust-strip">
+        <div class="trust-item">
+          <strong>Founding Belief</strong>
+          <span>Built with faith, family values, and commitment</span>
+        </div>
+        <div class="trust-item">
+          <strong>Service Area</strong>
+          <span>Haidergarh, Barabanki and nearby locations</span>
+        </div>
+        <div class="trust-item">
+          <strong>Order Support</strong>
+          <span>Retail, contractor, and project-based requirements</span>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about">
+        <div class="section-heading">
+          <p class="eyebrow">About Us</p>
+          <h2>A business rooted in trust and dedication.</h2>
+        </div>
+        <div class="about-grid">
+          <article class="about-story">
+            <p>
+              Lal Ji Traders is a building materials business in Haidergarh, Barabanki, founded by
+              Savitri Singh and family by the blessings of Baba Lal Dayal Ji. Our goal is simple:
+              help every customer find dependable construction materials at fair prices.
+            </p>
+            <p>
+              Whether you are building a new home, renovating a shop, or managing a larger project,
+              we aim to provide quality products, respectful service, and convenient ordering.
+            </p>
+          </article>
+          <div class="about-highlights">
+            <div class="highlight-card">
+              <h3>Our Mission</h3>
+              <p>To support strong construction work with dependable products and sincere customer care.</p>
+            </div>
+            <div class="highlight-card">
+              <h3>Our Promise</h3>
+              <p>Clear communication, practical guidance, and timely support for every order.</p>
+            </div>
+            <div class="highlight-card">
+              <h3>Our Values</h3>
+              <p>Faith, family, honesty, long-term relationships, and service to the local community.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section products-section" id="products">
+        <div class="section-heading with-inline-action">
+          <div>
+            <p class="eyebrow">Products</p>
+            <h2>Materials for every stage of construction.</h2>
+          </div>
+          <button class="btn btn-secondary" type="button" id="viewCartButton">
+            View Order Cart (<span id="cartCount">0</span>)
+          </button>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <section class="section rates-section" id="rates">
+        <div class="section-heading with-inline-action">
+          <div>
+            <p class="eyebrow">Market Rates</p>
+            <h2>Today's reference building material rates.</h2>
+          </div>
+          <div class="rate-stamp">
+            <strong>Updated</strong>
+            <span id="ratesUpdatedOn">April 26, 2026</span>
+          </div>
+        </div>
+
+        <div class="rates-intro">
+          <p>
+            These rates are shown as a daily reference board for customers comparing material costs.
+            Final Haidergarh delivery prices may change by brand, load size, transport, and same-day market movement.
+          </p>
+        </div>
+
+        <div class="rates-grid" id="ratesGrid"></div>
+      </section>
+
+      <section class="section estimator-section" id="estimator">
+        <div class="section-heading">
+          <p class="eyebrow">Cost Estimator</p>
+          <h2>Estimate the cost of building your home.</h2>
+        </div>
+
+        <div class="estimator-layout">
+          <div class="info-card estimator-copy">
+            <h3>Plan your budget early</h3>
+            <p>
+              Use this home construction estimator to understand an approximate budget based on
+              total built-up area, number of floors, and material finish level.
+            </p>
+            <ul>
+              <li>Low range for essential and economical construction</li>
+              <li>Standard range for balanced quality and durability</li>
+              <li>Premium range for higher-grade finishes and fittings</li>
+            </ul>
+            <p class="tiny-note">This is an estimate only. Final cost depends on design, labor, location, transport, and material brand selection.</p>
+          </div>
+
+          <form class="checkout-card estimator-card" id="estimatorForm">
+            <div class="checkout-head">
+              <h3>Home Cost Calculator</h3>
+              <p>Enter your project details to get an estimated construction cost.</p>
+            </div>
+
+            <div class="form-grid">
+              <label>
+                Plot / Built-up Area (sq ft)
+                <input type="number" name="area" min="100" placeholder="Example: 1200" required>
+              </label>
+              <label>
+                Number of Floors
+                <select name="floors" required>
+                  <option value="">Select floors</option>
+                  <option value="1">Ground Floor</option>
+                  <option value="2">Ground + 1</option>
+                  <option value="3">Ground + 2</option>
+                </select>
+              </label>
+              <label>
+                Construction Level
+                <select name="quality" required>
+                  <option value="">Select quality level</option>
+                  <option value="economy">Economy</option>
+                  <option value="standard">Standard</option>
+                  <option value="premium">Premium</option>
+                </select>
+              </label>
+              <label>
+                Include Finishing
+                <select name="finishing" required>
+                  <option value="">Select option</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="checkout-actions">
+              <button class="btn btn-primary" type="submit">Calculate Estimate</button>
+              <button class="btn btn-secondary" type="reset" id="resetEstimatorButton">Reset</button>
+            </div>
+
+            <div class="estimator-result" id="estimatorResult" hidden>
+              <div class="estimate-total">
+                <span>Estimated Project Cost</span>
+                <strong id="estimateTotal">Rs. 0</strong>
+              </div>
+              <div class="estimate-breakdown">
+                <article>
+                  <span>Approx. Rate / sq ft</span>
+                  <strong id="estimateRate">Rs. 0</strong>
+                </article>
+                <article>
+                  <span>Total Built Area</span>
+                  <strong id="estimateArea">0 sq ft</strong>
+                </article>
+                <article>
+                  <span>Suggested Material Budget</span>
+                  <strong id="estimateMaterials">Rs. 0</strong>
+                </article>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section order-section" id="order">
+        <div class="section-heading">
+          <p class="eyebrow">Order Function</p>
+          <h2>Simple ordering with multiple payment methods.</h2>
+        </div>
+
+        <div class="order-layout">
+          <div class="order-info">
+            <div class="info-card">
+              <h3>How to Order</h3>
+              <ol>
+                <li>Select products and add them to your order cart.</li>
+                <li>Enter your name, phone number, address, and delivery details.</li>
+                <li>Choose payment via UPI, bank transfer, cash on delivery, or online gateway.</li>
+                <li>Submit the order to save it for admin review.</li>
+              </ol>
+            </div>
+
+            <div class="info-card">
+              <h3>Payment Methods</h3>
+              <ul>
+                <li>Cash on delivery for local support</li>
+                <li>UPI payment for quick transfer</li>
+                <li>Bank transfer for larger orders</li>
+                <li>Razorpay-ready gateway integration for online checkout</li>
+              </ul>
+            </div>
+          </div>
+
+          <form class="checkout-card" id="checkoutForm">
+            <div class="checkout-head">
+              <h3>Place Your Order</h3>
+              <p>Fill this form and submit your material request.</p>
+            </div>
+
+            <div class="cart-box">
+              <div class="cart-box-header">
+                <strong>Order Summary</strong>
+                <button class="text-button" type="button" id="clearCartButton">Clear</button>
+              </div>
+              <div id="cartItems" class="cart-items">
+                <p class="empty-state">Your order cart is empty. Add products above to begin.</p>
+              </div>
+              <div class="cart-total">
+                <span>Estimated Total</span>
+                <strong id="cartTotal">Rs. 0</strong>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <label>
+                Full Name
+                <input type="text" name="customerName" placeholder="Enter your full name" required>
+              </label>
+              <label>
+                Phone Number
+                <input type="tel" name="phoneNumber" placeholder="Enter your phone number" required>
+              </label>
+              <label class="full-width">
+                Delivery Address
+                <textarea name="address" rows="3" placeholder="Enter delivery address" required></textarea>
+              </label>
+              <label>
+                Delivery Timeline
+                <select name="timeline" required>
+                  <option value="">Select required time</option>
+                  <option value="Urgent - same day">Urgent - same day</option>
+                  <option value="Within 1-2 days">Within 1-2 days</option>
+                  <option value="Within 3-5 days">Within 3-5 days</option>
+                  <option value="Flexible">Flexible</option>
+                </select>
+              </label>
+              <label>
+                Payment Method
+                <select name="paymentMethod" id="paymentMethod" required>
+                  <option value="">Select payment method</option>
+                  <option value="Cash on Delivery">Cash on Delivery</option>
+                  <option value="UPI">UPI</option>
+                  <option value="Bank Transfer">Bank Transfer</option>
+                  <option value="Online Gateway">Online Gateway</option>
+                </select>
+              </label>
+              <label class="full-width">
+                Order Notes
+                <textarea name="notes" rows="3" placeholder="Mention quantity, brand preference, project details, or delivery instructions"></textarea>
+              </label>
+            </div>
+
+            <div class="payment-note" id="paymentNote">
+              Choose a payment method to see instructions.
+            </div>
+
+            <div class="checkout-actions">
+              <button class="btn btn-primary" type="submit">Submit Order</button>
+              <button class="btn btn-secondary" type="button" id="gatewayButton">Pay Online</button>
+            </div>
+
+            <p class="tiny-note">
+              Payment gateway button is ready for Razorpay integration. Replace the demo key in
+              <code>script.js</code> with your live account key before production use.
+            </p>
+
+            <div class="result-box" id="orderResult" hidden>
+              <strong>Order Placed</strong>
+              <p>Your order has been saved successfully. Our team will review it and contact you shortly.</p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2>Reach out for quotations, bulk orders, and support.</h2>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-cards">
+            <article class="contact-card">
+              <h3>Business Address</h3>
+              <p>Lal Ji Traders</p>
+              <p>Haidergarh, Barabanki, Uttar Pradesh</p>
+            </article>
+            <article class="contact-card">
+              <h3>Phone & WhatsApp</h3>
+              <p><a href="tel:+919999999999">+91 99999 99999</a></p>
+              <p><a href="https://wa.me/919999999999" target="_blank" rel="noreferrer">Chat on WhatsApp</a></p>
+            </article>
+            <article class="contact-card">
+              <h3>Email</h3>
+              <p><a href="mailto:orders@laljitraders.in">orders@laljitraders.in</a></p>
+              <p>For orders, quotations, and customer support</p>
+            </article>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <label>
+              Name
+              <input type="text" name="contactName" placeholder="Your name" required>
+            </label>
+            <label>
+              Phone
+              <input type="tel" name="contactPhone" placeholder="Your phone number" required>
+            </label>
+            <label>
+              Email
+              <input type="email" name="contactEmail" placeholder="Your email address">
+            </label>
+            <label>
+              Message
+              <textarea name="contactMessage" rows="5" placeholder="Write your requirement or inquiry" required></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Send Inquiry</button>
+            <p class="tiny-note">Your inquiry is saved directly to the admin panel so our team can review it and call you back.</p>
+            <div class="result-box" id="inquiryResult" hidden>
+              <strong>Inquiry Received</strong>
+              <p>Thank you for contacting Lal Ji Traders. Our team will call you back shortly.</p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <strong>Lal Ji Traders</strong>
+        <p>Founded by Savitri Singh and family by the blessings of Baba Lal Dayal Ji.</p>
+      </div>
+      <p>Serving Haidergarh, Barabanki with quality building materials and trusted customer support.</p>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
